@@ -1,0 +1,9 @@
+//Derek Johnson dej3tc@virginia.edu
+//9/3/2019
+//postlab.question.txt
+
+1) why would you use a pointer instead of just instantiating a new instance of an object. I read that pointers are more flexable but I don't understand what that means.
+
+2) Similar to the first question but when would a pointer be used instead of a reference.
+
+
