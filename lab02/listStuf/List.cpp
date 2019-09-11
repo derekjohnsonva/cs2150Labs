@@ -26,7 +26,11 @@ List::List(const List& source) {   //Copy Constructor
 }
 
 List::~List(void) {    //Destructor
-
+	ListItr iter(head);
+	for (int i =0; i <(count+2); i++) {
+		delete iter.current;
+		iter.moveForward();
+	}
 }
 
 List& List::operator=(const List& source) {  //Equals operator
@@ -48,6 +52,13 @@ bool List::isEmpty() const{  //returns true if empty
 }
 
 void List::makeEmpty() {  //Removes all items except blank head/tail
+	ListItr iter(this->first());
+	while (!iter.isPastEnd()) {
+		delete iter.current;
+		iter.moveForward();
+	}
+	head -> next = tail;
+	tail -> previous = head;
 }
 
 ListItr List::first() {  //Returns the iterator that points to the 
@@ -100,15 +111,32 @@ void List::insertAtTail(int x) {
 }
 //Removes the first occurrence of x
 void List::remove(int x) {
-
+	ListItr iter(this->first());
+	while (!iter.isPastEnd()) {
+		if (iter.current->value == x){
+			ListNode * p = iter.current->previous;
+			ListNode * n = iter.current->next;
+			delete iter.current;
+			p -> next = n;
+			n -> previous = p;
+			break;
+		}
+		iter.moveForward();
+	}
 }
 ListItr List::find(int x) {
-	ListItr l;
-	return l;
+	ListItr * iter = new ListItr((this->first()));
+	while (!iter->isPastEnd()) {
+		if (iter->current->value == x){
+			return *iter;
+		}
+		iter->moveForward();
+	}
+
 }
 
 int List::size() const {
-	return 1;
+	return count;
 }
 
 void printList(List& source, bool direction) {
