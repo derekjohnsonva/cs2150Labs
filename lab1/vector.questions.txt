@@ -1,1 +1,0 @@
-As long as you include the #include <iostream in the header function why do you need to include it in the .cpp file?

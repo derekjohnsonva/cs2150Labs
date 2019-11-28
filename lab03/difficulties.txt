@@ -1,0 +1,19 @@
+The first problem I encountered while trying to get my code to work came 
+from my number List being a private variable. My push, pop, and top 
+methods were failing in my main method when I tried to call them. I realized 
+after some debugging that the issue was that these methods were not in scope.
+To fix this I had to make a push, pop, and top method in my postfixCalc files.
+This fixed the scope issues.
+
+The problem that set me back the farthest is kind of embarassing. I had 
+declaired 
+List * nums;
+in my postfixCalc.h file and then in my constructor for postfixCalc I had 
+the line
+List * nums = new List();
+After several hours of debugging and tracing through the values pointers were
+referencing I started looking back at my implementation from the in lab and 
+realized my problem. I had created a new List pointer instead of using the 
+one from my postfixCalc.h file. To fix this I just changed the line in my 
+constructor to
+nums = new List();

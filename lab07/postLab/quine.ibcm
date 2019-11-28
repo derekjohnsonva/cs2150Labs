@@ -1,0 +1,20 @@
+c007 00		jump	start
+0013 01	  lastLine  dw      0
+0001 02   one   dw      0
+0000 03   i     dw		this will hold the starting line
+3000 04	  load  dw      
+b000 05
+b000 06
+3001 07	  start	load	lastLine
+6003 08		sub	i
+d014 09		jmpl	end
+3004 0a		load    load
+5003 0b		add	i
+400d 0c		store   load line
+0000 0d   load line
+1800 0e		print
+3003 0f		load	i
+5002 10		add	one
+4003 11		store	i
+c007 12		jump	start
+0000 13		halt

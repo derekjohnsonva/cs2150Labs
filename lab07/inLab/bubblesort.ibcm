@@ -1,0 +1,98 @@
+c010 000
+0005 001  size
+005d 002  index
+0000 003  i
+0000 004  j
+0000 005  ajLoc
+0000 006  temp
+0000 007  zero
+0001 008  one
+3000 009  get
+4000 00a  store
+6000 00b  sub
+0000 00c  null
+0000 00d  null
+0000 00e  null
+0000 00f  null
+3004 010  start  load  j
+5001 011	 add   size
+6008 012	 sub   one
+4004 013	 store j
+3001 014  loop1  load  size
+6003 015	 sub   i
+e05c 016	 jmpl  exit  
+d05c 017	 jmpe  exit  
+3004 018  loop2  load  i
+6003 019	 sub   j
+e057 01a	 jmple  inci 
+d057 01b	 jmpe  inc i 
+2000 01c
+2000 01d
+2000 01e
+2000 01f
+3009 020	 load  get
+5002 021	 add   index
+5004 022	 add   j
+4029 023	 store loadit 
+2000 024
+6009 025  	 sub  get
+6008 026	 sub  one
+500b 027	 add  sub
+402a 028	 store  subit  
+0000 029  loadit
+0000 02a  subit
+b000 02b
+b000 02c
+b000 02d
+b000 02e
+e034 02f	 jmpl  swap
+d034 030	 jmpe  swap
+c051 031	 jmp  sub j 
+b000 032
+b000 033
+3002 034  swap	 load  index
+5004 035	 add   j
+4005 036	 store ajloc
+5009 037	 add   get
+4039 038	 store getit
+0000 039  getit  dw    0
+4006 03a	 store temp
+b000 03b
+3005 03c	 load  ajloc
+6008 03d	 sub   one
+5009 03e	 add   get
+4048 03f	 store loadaj-1
+3005 040	 load  ajloc
+500a 041	 add   store
+4049 042	 store  storeaj
+3005 043	 load  ajloc
+6008 044	 sub   one
+500a 045	 add   store
+404b 046	 store  storeaj-1
+2000 047
+0000 048  loadaj-1
+0000 049  storeaj
+3006 04a	 load  temp
+0000 04b  storeaj-1
+c051 04c	 jmp sub j
+0000 04d
+0000 04e
+0000 04f
+0000 050 
+3004 051  sub j	 load  j
+6008 052	 sub   one
+4004 053	 store j
+c018 054	 jmp   loop 2
+0000 055
+0000 056
+3003 057 add i	 load i
+5008 058	 add  one
+4003 059	 store i
+c014 05a	 jmp loop 1
+0000 05b
+0000 05c exit
+0001 05d
+0003 05e
+0002 05f
+0005 060
+0004 061

@@ -1,0 +1,60 @@
+c00d  000     jump to start
+000a  001     size of the array = 10
+0032  002     starting address of array=0032
+0000  003     i; counter for the loop
+0000  004     stores c
+0000  005     stores highest value
+0000  006     stores current value
+0001  007     value 1
+0000  008     value 0
+3000  009     operator
+3003  00a    open counter
+5007  00b    adds 1 to counter
+4003  00c    stores it
+3001  00d    loop starts : load the size of array
+6003  00e    	subtract loop counter from array size
+e022  00f    	if less than zero go to the change block
+d022  010    	if zero go to change block
+3004  011    	open c
+5002  012    	add starting address
+5003  013    	add loop counter
+5009  014    	add opp code 
+4016  015   	store at 016
+b000  016   	null : opens value
+6005  017   	subtract highest value
+e01c  018   	skip the step of setting new highest value
+d01c  019    	skip the step of setting new highest value
+5005  01a    	add the highest value back to current value
+4005  01b    	set highest value to current value
+3008  01c       	loop to reset variables: open 0  
+4004  01d       	set c to 0
+4006  01e       	set current value to 0
+c00a  01f
+0000  020
+0000  021
+3005  022  	Change: load highest value
+1800  023  	print highest value
+0000  024  	halt
+0000  025
+0000  026
+0000  027 
+0000  028
+0000  029
+0000  02a
+0000  02b
+0000  02c
+0000  0cd
+0000  02e
+0000  02f
+0000  030
+0000  031
+0001  032
+0002  033
+0003  034
+0004  035
+0005  036
+0005  037
+0006  038
+0007 039
+0001  03a
+0000  03b

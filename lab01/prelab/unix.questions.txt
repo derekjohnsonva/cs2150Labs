@@ -1,0 +1,5 @@
+//Derek Johnson dej3tc
+//9/16/19
+//unix.questions.txt
+
+I am still uncertain as to what the various directories are for in the unix file system. Coming from Windows I am only really used to Documents and Desktop.

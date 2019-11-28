@@ -1,0 +1,29 @@
+c00a	000	variable declaration: 
+0000	001	a
+0000	002	b
+0000	003	c
+0000	004	sum
+0000	005	blank through 009
+0000	006
+0000	007
+0000	008
+0000	009
+1000	00a	start: prompt for a
+4001	00b	store a
+1000	00c	prompt for b
+4002	00d	store b
+1000	00e	prompt for c
+4003	00f	store c
+3004	010	load sum to the accum
+5001	011	add a
+5002	012	add b
+5003	013	add c
+d016	014	 if sum=0 jump to end
+c00a	015	else, jump to start
+3001	016	open a
+1800	017	print a
+3002	018	open b
+1800	019	print b
+3003	01a	open c
+1800	01b	print c
+0000	01c	break
